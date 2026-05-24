@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🧗 Rock Climbing Robot — MuJoCo Simulation
 
 > Research-quality robotics simulation for an autonomous wall-climbing robot.  
@@ -161,3 +162,6 @@ Structured for university submission and portfolio use:
 ## License
 
 MIT License — see [LICENSE](LICENSE).
+=======
+# rock-climbing-robot
+>>>>>>> 99a7d74c549392cd8acdd954da250d97adbc3f13
