@@ -1,0 +1,19 @@
+# Climbing planner configuration
+planner:
+  max_reach: 0.55        # [m] max limb reach
+  n_traj_steps: 20       # interpolation steps per move
+  min_height_gain: 0.10  # [m] minimum upward gain per move
+  max_plan_steps: 30     # maximum moves per planning call
+
+  # IK solver settings
+  ik:
+    max_iterations: 150
+    position_tolerance: 0.005  # [m]
+    step_size: 0.5
+    damping: 0.0001
+    null_space_weight: 0.1
+
+  # Stability requirements
+  stability:
+    min_margin: 0.01   # [m] minimum COM margin to accept a move
+    min_contacts: 2    # minimum simultaneous grips

@@ -1,0 +1,21 @@
+# Robot physical parameters
+robot:
+  n_limbs: 3
+  upper_arm_length: 0.25   # [m]
+  lower_arm_length: 0.20   # [m]
+  shoulder_span: 0.70      # [m]
+  total_mass: 3.75         # [kg]
+  grip_force_threshold: 0.5  # [N]
+
+  # Joint limits [rad] per limb
+  joint_limits:
+    shoulder_x: [-1.57, 1.57]
+    shoulder_z: [-0.78, 0.78]
+    elbow:      [-2.00, 0.10]
+
+  # Position controller gains
+  gains:
+    shoulder_kp: 80.0
+    elbow_kp: 60.0
+    center_shoulder_kp: 100.0
+    center_elbow_kp: 80.0

@@ -1,0 +1,21 @@
+# Simulation configuration
+simulation:
+  model_path: assets/models/scene.xml
+  timestep: 0.002      # [s]
+  gravity: [0.0, 0.0, -9.81]
+  max_steps: 100000
+  render: false
+  seed: 42
+
+  # Target: reach this height [m]
+  goal_height: 1.80
+
+  # Initial grip configuration
+  initial_grips:
+    left:   "r0_c0"
+    right:  "r0_c2"
+    center: "r0_c1"
+
+  # Logging
+  log_every_n_steps: 100
+  save_trajectory: true

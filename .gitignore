@@ -1,0 +1,61 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+.Python
+.venv/
+venv/
+env/
+ENV/
+
+# Testing & coverage
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+*.xml
+
+# Type checking
+.mypy_cache/
+.dmypy.json
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# MuJoCo runtime artifacts
+*.mjb
+mjkey.txt
+
+# Experiment outputs (large files)
+experiments/*/outputs/
+experiments/*/videos/
+experiments/*/*.pkl
+experiments/*/*.hdf5
+
+# Logs
+logs/
+*.log
+
+# Config secrets
+.env
+*.env.local
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Docs build
+site/
+docs/_build/

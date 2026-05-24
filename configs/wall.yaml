@@ -1,0 +1,14 @@
+# Climbing wall configuration
+wall:
+  width: 1.2     # [m]
+  height: 2.5    # [m]
+  depth: 0.05    # [m]
+  hold_depth: 0.03  # [m] protrusion from wall face
+  n_rows: 6
+  n_cols: 3
+  row_spacing: 0.35  # [m]
+  base_height: 0.30  # [m]
+  wall_y: 0.0
+
+  # Hold generation seed for reproducibility
+  seed: 42

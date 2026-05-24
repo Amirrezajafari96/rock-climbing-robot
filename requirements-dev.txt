@@ -1,0 +1,13 @@
+# Development dependencies
+# Install with: pip install -r requirements-dev.txt
+
+-r requirements.txt
+
+pytest>=7.4
+pytest-cov>=4.1
+pytest-xdist>=3.3
+black>=23.0
+ruff>=0.1.0
+mypy>=1.7
+types-PyYAML
+pre-commit>=3.5

@@ -1,0 +1,84 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "climbing-robot"
+version = "0.1.0"
+description = "Autonomous rock climbing robot simulation with MuJoCo"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Rock Climbing Robot Team" }]
+keywords = ["robotics", "mujoco", "simulation", "climbing", "kinematics"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+
+dependencies = [
+    "mujoco>=3.0.0",
+    "numpy>=1.26.0",
+    "scipy>=1.11.0",
+    "pyyaml>=6.0",
+    "rich>=13.0",          # pretty logging & progress bars
+    "matplotlib>=3.8.0",   # trajectory and stability plots
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4",
+    "pytest-cov>=4.1",
+    "pytest-xdist>=3.3",   # parallel tests
+    "black>=23.0",
+    "ruff>=0.1.0",
+    "mypy>=1.7",
+    "types-PyYAML",
+    "pre-commit>=3.5",
+]
+docs = [
+    "mkdocs>=1.5",
+    "mkdocs-material>=9.4",
+    "mkdocstrings[python]>=0.24",
+]
+
+[project.scripts]
+climbing-sim   = "climbing_robot.scripts.run_simulation:main"
+climbing-plan  = "climbing_robot.scripts.run_planner:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.black]
+line-length = 100
+target-version = ["py310", "py311", "py312"]
+
+[tool.ruff]
+line-length = 100
+select = ["E", "F", "W", "I", "UP", "B", "C4", "PIE", "RET", "SIM"]
+ignore = ["E501"]
+
+[tool.mypy]
+python_version = "3.10"
+strict = false
+ignore_missing_imports = true
+warn_return_any = true
+warn_unused_configs = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--cov=src/climbing_robot --cov-report=term-missing -v"
+markers = [
+    "unit: fast, no simulator required",
+    "integration: requires all modules wired together",
+    "simulation: requires mujoco installed",
+    "slow: long-running tests",
+]
+
+[tool.coverage.run]
+source = ["src/climbing_robot"]
+omit = ["*/tests/*", "*/scripts/*"]

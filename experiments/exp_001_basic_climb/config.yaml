@@ -1,0 +1,33 @@
+# Experiment 001: Basic Inchworm Climb
+# Goal: demonstrate 3-limbed robot climbing from z=0.3 to z=1.8 using greedy A* planner.
+# Date: 2026-05-23
+# Author: Rock Climbing Robot Team
+
+experiment:
+  name: "exp_001_basic_climb"
+  description: "Baseline greedy climbing planner on regular 3x6 hold grid"
+  seed: 42
+
+simulation:
+  model_path: assets/models/scene.xml
+  timestep: 0.002
+  goal_height: 1.80
+  max_steps: 50000
+
+wall:
+  n_rows: 6
+  n_cols: 3
+  row_spacing: 0.35
+  base_height: 0.30
+
+planner:
+  max_reach: 0.55
+  n_traj_steps: 20
+  min_height_gain: 0.10
+
+# Expected results (fill in after running)
+results:
+  n_moves: null
+  height_achieved: null
+  duration_seconds: null
+  success: null
